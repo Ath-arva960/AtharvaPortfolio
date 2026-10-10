@@ -1,0 +1,598 @@
+.toolkit-section {
+  padding-top: 105px;
+  padding-bottom: 112px;
+}
+
+.toolkit-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: end;
+  gap: 8%;
+}
+
+.toolkit-heading h2 {
+  margin: 0;
+  font: 700 clamp(46px, 5vw, 68px) / 0.99 "Space Grotesk", sans-serif;
+  letter-spacing: -3.4px;
+  text-transform: uppercase;
+}
+
+.toolkit-heading h2 span {
+  background: linear-gradient(100deg, #bf4cff, #4a75ff 58%, #22b8ff);
+  color: transparent;
+  background-clip: text;
+}
+
+.toolkit-heading > p {
+  max-width: 440px;
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.toolkit-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.96fr;
+  align-items: stretch;
+  gap: 17px;
+  margin-top: 49px;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.practice-card {
+  position: relative;
+  min-height: 204px;
+  padding: 20px 19px;
+  overflow: hidden;
+  border: 1px solid #ffffff16;
+  border-radius: 17px;
+  background:
+    radial-gradient(ellipse at 100% 0%, #2467a015, transparent 48%),
+    linear-gradient(145deg, #ffffff0a, #ffffff03);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.practice-card:hover {
+  transform: translateY(-3px);
+  border-color: #5daeff55;
+  background:
+    radial-gradient(ellipse at 100% 0%, #398dcb20, transparent 52%),
+    linear-gradient(145deg, #ffffff0c, #ffffff04);
+}
+
+.practice-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.practice-number,
+.orbit-overline {
+  color: #82a2c7;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+
+.practice-icon,
+.technology-detail-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 37px;
+  height: 37px;
+  place-items: center;
+  border: 1px solid #5daeff35;
+  border-radius: 11px;
+  background: linear-gradient(145deg, #3585c522, #a54cff12);
+  color: #8bdcff;
+}
+
+.practice-card h3 {
+  margin: 0 0 9px;
+  color: #f2f6fc;
+  font: 600 15px / 1.35 "Space Grotesk", sans-serif;
+  letter-spacing: -0.25px;
+  text-transform: uppercase;
+}
+
+.practice-card p {
+  max-width: 240px;
+  margin: 0;
+  color: #9cabc0;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.practice-arrow {
+  position: absolute;
+  right: 17px;
+  bottom: 17px;
+  color: #7088a4;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.practice-card:hover .practice-arrow {
+  transform: translate(2px, -2px);
+  color: #83d8ff;
+}
+
+.toolkit-orbit-card {
+  position: relative;
+  min-width: 0;
+  padding: 22px 23px 18px;
+  overflow: hidden;
+  border: 1px solid #ffffff1c;
+  border-radius: 19px;
+  background:
+    radial-gradient(ellipse at 52% 43%, #20589425, transparent 47%),
+    linear-gradient(145deg, #111f31e8, #0b1420f2);
+  box-shadow:
+    inset 0 1px #ffffff09,
+    0 20px 50px #00000017;
+}
+
+.toolkit-orbit-card::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg, #ffffff05, transparent 40%);
+  content: "";
+  pointer-events: none;
+}
+
+.orbit-card-heading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.orbit-card-heading h3 {
+  margin: 7px 0 0;
+  color: #ecf4ff;
+  font: 600 17px / 1.3 "Space Grotesk", sans-serif;
+  letter-spacing: -0.45px;
+}
+
+.orbit-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 9px;
+  border: 1px solid #71d9bf24;
+  border-radius: 30px;
+  color: #b1c3d8;
+  font-size: 8px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.orbit-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6ce2bb;
+  box-shadow: 0 0 10px #6ce2bb99;
+}
+
+.toolkit-globe {
+  position: relative;
+  height: clamp(295px, 28vw, 365px);
+  margin: 2px -6px 0;
+  touch-action: pan-y;
+  user-select: none;
+  cursor: grab;
+}
+
+.toolkit-globe:active {
+  cursor: grabbing;
+}
+
+.globe-halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 67%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #278eff20;
+  filter: blur(36px);
+  pointer-events: none;
+}
+
+.globe-disc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(72%, 284px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 1px solid #8cc9ff4a;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 25%, #9adfff55, transparent 24%),
+    radial-gradient(circle at 50% 48%, #21598c 0%, #102d4a 60%, #071629 100%);
+  box-shadow:
+    inset -19px -15px 31px #020b17b0,
+    inset 9px 8px 24px #8bd3ff28,
+    0 0 35px #2987d832,
+    0 0 90px #2366a51a;
+  pointer-events: none;
+}
+
+.globe-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.globe-map-rotation {
+  transform-box: view-box;
+  transform-origin: 160px 160px;
+  transform: rotate(var(--globe-rotation, 0deg));
+  transition: transform 80ms linear;
+}
+
+.globe-grid ellipse,
+.globe-grid path {
+  fill: none;
+  stroke: #92d8ff;
+  stroke-opacity: 0.22;
+  stroke-width: 0.8;
+}
+
+.globe-grid path {
+  stroke-opacity: 0.13;
+}
+
+.globe-land path {
+  fill: #78b9c7;
+  fill-opacity: 0.38;
+  stroke: #a9edfa;
+  stroke-opacity: 0.42;
+  stroke-width: 1;
+}
+
+.globe-land .globe-core {
+  fill: #c1f3ff;
+  filter: drop-shadow(0 0 5px #5ddaff);
+}
+
+.globe-signal circle {
+  fill: #b4f2ff;
+  filter: drop-shadow(0 0 5px #46caff);
+}
+
+.globe-outline {
+  fill: none;
+  stroke: #95d4ff;
+  stroke-opacity: 0.42;
+  stroke-width: 1.2;
+}
+
+.globe-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 84%;
+  height: 36%;
+  border: 1px solid #69bcff35;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-one {
+  transform: translate(-50%, -50%) rotate(-28deg);
+}
+
+.orbit-two {
+  width: 73%;
+  height: 53%;
+  border-color: #a65dff26;
+  transform: translate(-50%, -50%) rotate(46deg);
+}
+
+.technology-node {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border: 1px solid #ffffff20;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #172a40ed, #101c2cf2);
+  box-shadow: 0 8px 24px #00000030;
+  color: #b9c9dc;
+  font: 500 9px / 1 "DM Sans", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.technology-node:hover,
+.technology-node.is-active {
+  border-color: #7ddaff8a;
+  background: linear-gradient(145deg, #1a4160, #182943);
+  box-shadow:
+    0 0 22px #46baff24,
+    0 8px 24px #00000030;
+  color: #f3fbff;
+}
+
+.technology-node i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #63819d;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.technology-node.is-active i {
+  background: #73e2ff;
+  box-shadow: 0 0 8px #73e2ff;
+}
+
+.node-react {
+  top: 19%;
+  right: 10%;
+}
+
+.node-typescript {
+  top: 36%;
+  left: 0;
+}
+
+.node-node {
+  top: 62%;
+  right: 0;
+}
+
+.node-graphql {
+  right: 15%;
+  bottom: 12%;
+}
+
+.node-tailwind {
+  bottom: 17%;
+  left: 1%;
+}
+
+.node-git {
+  top: 9%;
+  left: 35%;
+}
+
+.technology-detail {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 13px;
+  border: 1px solid #ffffff15;
+  border-radius: 13px;
+  background: linear-gradient(110deg, #ffffff0a, #ffffff04);
+  backdrop-filter: blur(12px);
+}
+
+.technology-detail-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #9ccfff;
+}
+
+.technology-detail-copy {
+  min-width: 0;
+}
+
+.technology-detail-copy > span {
+  color: #75baff;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.technology-detail-copy p {
+  margin: 4px 0 2px;
+  color: #e1e9f3;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.technology-detail-copy small {
+  color: #8e9fb4;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.globe-instruction {
+  position: relative;
+  z-index: 1;
+  margin: 13px 0 0;
+  color: #8496ad;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1050px) {
+  .toolkit-section {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .toolkit-layout {
+    grid-template-columns: 1fr 0.95fr;
+    gap: 12px;
+  }
+
+  .practice-card {
+    min-height: 195px;
+    padding: 17px 15px;
+  }
+
+  .practice-card h3 {
+    font-size: 13px;
+  }
+
+  .toolkit-orbit-card {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .toolkit-globe {
+    height: 300px;
+  }
+
+  .technology-node {
+    padding: 7px 8px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 760px) {
+  .toolkit-section {
+    padding: 75px 22px;
+  }
+
+  .toolkit-heading {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .toolkit-heading h2 {
+    font-size: 46px;
+    letter-spacing: -2.8px;
+  }
+
+  .toolkit-heading > p {
+    font-size: 13px;
+  }
+
+  .toolkit-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .practice-grid {
+    gap: 9px;
+  }
+
+  .practice-card {
+    min-height: 180px;
+    padding: 15px 13px;
+  }
+
+  .practice-card-top {
+    margin-bottom: 20px;
+  }
+
+  .practice-card h3 {
+    max-width: 170px;
+    font-size: 12px;
+  }
+
+  .practice-card p {
+    max-width: 190px;
+    font-size: 10px;
+  }
+
+  .practice-arrow {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .toolkit-orbit-card {
+    padding: 20px 17px 16px;
+  }
+
+  .toolkit-globe {
+    height: min(92vw, 350px);
+    min-height: 295px;
+    margin: 0 -8px;
+  }
+
+  .globe-disc {
+    width: min(71%, 270px);
+  }
+
+  .node-typescript {
+    left: -1%;
+  }
+
+  .node-node {
+    right: -1%;
+  }
+
+  .technology-node {
+    padding: 8px 9px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 390px) {
+  .practice-card {
+    min-height: 190px;
+  }
+
+  .orbit-card-heading h3 {
+    font-size: 15px;
+  }
+
+  .orbit-status {
+    padding: 6px 7px;
+    font-size: 7px;
+  }
+
+  .toolkit-globe {
+    height: 300px;
+  }
+
+  .technology-node {
+    padding: 7px 8px;
+    font-size: 8px;
+  }
+
+  .node-typescript {
+    left: -2%;
+  }
+
+  .node-node {
+    right: -2%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practice-card,
+  .practice-arrow,
+  .technology-node,
+  .technology-node i,
+  .globe-map-rotation {
+    transition: none;
+  }
+}
